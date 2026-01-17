@@ -61,6 +61,7 @@ router.post('/signin', async(req,res) => {
 
         return res.status(200).json({
             message: `Welcome ${user.name}`,
+            userId: user.id,
             token: token
         })
     } catch (error: any) {
@@ -68,5 +69,6 @@ router.post('/signin', async(req,res) => {
         return res.status(500).json({ message: "Internal server error" });
     }
 })
+
 
 export default router;
